@@ -1,9 +1,10 @@
 from wsgiref.validate import validator
-
 from flask import Flask, render_template
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired
+from flask_bootstrap import Bootstrap5
+
 
 
 class LoginFrom(FlaskForm):
@@ -13,6 +14,7 @@ class LoginFrom(FlaskForm):
 
 app = Flask(__name__)
 app.secret_key = "any-string-you-want-just-keep-it-secret"
+boostrap = Bootstrap5(app)
 
 @app.route("/")
 def home():
